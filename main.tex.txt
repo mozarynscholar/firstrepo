@@ -1,0 +1,401 @@
+\documentclass{beamer}
+\usepackage{polski}
+%\usepackage[cp1250]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{ragged2e}
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{default}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{listings}
+
+\title[Git]{Podtawy korzystania z Git}
+\author{Jaszka}
+\institute{ADA}
+\date{23.01.2020}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% Uncomment these lines for an automatically generated outline.
+%\begin{frame}{Outline}
+%  \tableofcontents
+%\end{frame}
+%
+\section{Czym jest Git}
+%
+\begin{frame}{Czym jest Git}
+\justify
+%
+Git to system kontroli wersji (ang. version/revision control system, VCS) – oprogramowanie służące do śledzenia zmian głównie w kodzie źródłowym oraz pomocy programistom w łączeniu zmian dokonanych w plikach przez wiele osób w różnym czasie.
+%
+\end{frame}
+%
+\begin{frame}{Instalacja oprogramowania}
+\justify
+%
+Ściągnięcie środowiska z konsolą: \url{https://git-scm.com/downloads}
+%
+\end{frame}
+%
+\begin{frame}{Instalacja oprogramowania}
+\justify
+%
+\begin{figure}[htb!]
+\begin{center}
+\includegraphics[width=0.6\linewidth]{figures/fig_1.png}
+\end{center}
+\caption{Opcje instalacji 1}\label{fig:1}
+\end{figure}
+%
+\end{frame}
+%
+\begin{frame}{Instalacja oprogramowania}
+\justify
+%
+\begin{figure}[htb!]
+\begin{center}
+\includegraphics[width=0.6\linewidth]{figures/fig_2.png}
+\end{center}
+\caption{Opcje instalacji 2}\label{fig:2}
+\end{figure}
+%
+\end{frame}
+%
+\begin{frame}{Instalacja oprogramowania}
+\justify
+%
+\begin{figure}[htb!]
+\begin{center}
+\includegraphics[width=0.6\linewidth]{figures/fig_3.png}
+\end{center}
+\caption{Opcje instalacji 3}\label{fig:3}
+\end{figure}
+%
+\end{frame}
+%
+\begin{frame}{Instalacja oprogramowania}
+\justify
+%
+\begin{figure}[htb!]
+\begin{center}
+\includegraphics[width=0.6\linewidth]{figures/fig_4.png}
+\end{center}
+\caption{Opcje instalacji 4}\label{fig:4}
+\end{figure}
+%
+\end{frame}
+%
+\begin{frame}{Instalacja oprogramowania}
+\justify
+%
+\begin{figure}[htb!]
+\begin{center}
+\includegraphics[width=0.6\linewidth]{figures/fig_5.png}
+\end{center}
+\caption{Opcje instalacji 5}\label{fig:5}
+\end{figure}
+%
+\end{frame}
+%
+\begin{frame}{Instalacja oprogramowania}
+\justify
+%
+\begin{figure}[htb!]
+\begin{center}
+\includegraphics[width=0.6\linewidth]{figures/fig_6.png}
+\end{center}
+\caption{Opcje instalacji 6}\label{fig:6}
+\end{figure}
+%
+\end{frame}
+%
+\begin{frame}{Instalacja oprogramowania}
+%
+\begin{figure}[htb!]
+\begin{center}
+\includegraphics[width=0.6\linewidth]{figures/fig_7.png}
+\end{center}
+\caption{Opcje instalacji 7}\label{fig:7}
+\end{figure}
+%
+\end{frame}
+%
+\begin{frame}[fragile]{Ustawienia środowiska}
+\justify
+%
+Możesz zmienić nazwę użytkownika przypisaną zatwierdzeniom (commit) Git-a za pomocą polecenia \texttt{git config}. Nowa nazwa, którą ustawisz, będzie widoczna w przyszłych zatwierdzeniach, które przesyłasz na GitHub z wiersza poleceń. Można użyć dowolnego tekstu jako nazwy użytkownika Git.
+%
+\footnotesize
+\begin{lstlisting}
+Open Git Bash.
+Set a Git username:
+
+$ git config --global user.name "Mona Lisa"
+
+Confirm that you have set the Git username correctly:
+
+$ git config --global user.name
+> Mona Lisa
+\end{lstlisting}
+%
+\end{frame}
+%
+\begin{frame}[fragile]{Ustawienia środowiska}
+\justify
+%
+Nazwa użytkownika dla każdego repozytorium
+%
+\footnotesize
+\begin{lstlisting}
+Open Git Bash.
+Set a Git username:
+
+$ git config --global user.name "Mona Lisa"
+
+Confirm that you have set the Git username correctly:
+
+$ git config --global user.name
+> Mona Lisa
+\end{lstlisting}
+%
+\end{frame}
+%
+\begin{frame}[fragile]{Ustawienia środowiska}
+\justify
+%
+Nazwa użytkownika dla określonego repozytorium
+%
+\footnotesize
+\begin{lstlisting}
+Open Git Bash.
+
+Change the current working directory to the 
+local repository where you want to configure 
+the name that is associated with your Git 
+commits.
+
+Set a Git username:
+
+$ git config user.name "Mona Lisa"
+
+Confirm that you have set the Git username correctly:
+
+$ git config user.name
+> Mona Lisa
+\end{lstlisting}
+%
+\end{frame}
+%
+\begin{frame}[fragile]{Założenie własnego konta - GitHub}
+\justify
+%
+Strona: https://github.com/
+%
+\begin{figure}[htb!]
+\begin{center}
+\includegraphics[width=1\linewidth]{figures/fig_8.png}
+\end{center}
+\caption{Założenia konta}\label{fig:8}
+\end{figure}
+%
+\end{frame}
+%
+\begin{frame}[fragile]{Założenie własnego konta - GitHub}
+\justify
+%
+\begin{figure}[htb!]
+\begin{center}
+\includegraphics[width=1\linewidth]{figures/fig_9.png}
+\end{center}
+\caption{Wybór planu}\label{fig:9}
+\end{figure}
+%
+\end{frame}
+%
+\begin{frame}[fragile]{Duperele - GitHub}
+\justify
+%
+\begin{figure}[htb!]
+\begin{center}
+\includegraphics[width=1\linewidth]{figures/fig_10.png}
+\end{center}
+\caption{Duperele}\label{fig:10}
+\end{figure}
+%
+Na koniec weryfikacja e-mail
+\end{frame}
+%
+\begin{frame}[fragile]{Założenie pierwszego repozytorium - GitHub}
+\justify
+%
+\begin{figure}[htb!]
+\begin{center}
+\includegraphics[width=1\linewidth]{figures/fig_11.png}
+\end{center}
+\caption{Dane do pierwszego repozytorium}\label{fig:11}
+\end{figure}
+%
+\end{frame}
+%
+\begin{frame}[fragile]{Ustawienia e-mail użytkownika - Git Bash}
+\justify
+%
+Ustawienie email dla każdego repozytorium na komputerze
+\footnotesize
+\begin{lstlisting}
+Open Git Bash.
+
+Set an email address in Git. You can use your 
+GitHub-provided no-reply email address or any 
+email address.
+
+$ git config --global user.email "email@example.com"
+
+Confirm that you have set the email address correctly 
+in Git:
+
+$ git config --global user.email
+email@example.com
+
+Add the email address to your GitHub account by setting 
+your commit email address, so that your commits are 
+attributed to you and appear in your contributions graph.
+\end{lstlisting}
+%
+\end{frame}
+%
+\begin{frame}[fragile]{Ustawienia e-mail użytkownika - Git Bash}
+\justify
+%
+Ustawienie email dla wybranego repozytorium na komputerze
+\footnotesize
+\begin{lstlisting}
+Open Git Bash.
+
+Change the current working directory to the local repository 
+where you want to configure the email address that you 
+associate  with your Git commits.
+
+Set an email address in Git. You can use your 
+GitHub-provided  no-reply email address or any email address.
+
+$ git config user.email "email@example.com"
+
+Confirm that you have set the email address 
+correctly in Git:
+
+$ git config user.email
+email@example.com
+
+Add the email address to your GitHub account by setting your 
+commit email address, so that your commits are attributed to 
+you and appear in your contributions graph.
+\end{lstlisting}
+%
+\end{frame}
+%
+\begin{frame}[fragile]{Pierwsze dwie linijki - Git Bash}
+\justify
+%
+\begin{figure}[htb!]
+\begin{center}
+\includegraphics[width=1\linewidth]{figures/fig_12.png}
+\end{center}
+\caption{Pierwsze dwiel linijki}\label{fig:12}
+\end{figure}
+%
+\end{frame}
+%
+\begin{frame}[fragile]{Praca z repozytorium na kompie - Git Bash}
+\justify
+%
+\footnotesize
+Przechodzimy do katalogu roboczego
+\\[0.5em]
+\texttt{\$ cd c:/first\_repo}
+\\[0.5em]
+Inicjujemy pracę z git-em
+\\[0.5em]
+\texttt{\$ git init}
+\\[0.5em]
+\texttt{Initialized empty Git repository in C:/first_repo/.git/}
+\\[0.5em]
+Przechodziny do repozytorium na gitHub (zielony przycisk "clone or download" do skopiowania adresu repozytorium)
+\\[0.5em]
+\texttt{git remote add origin https://github.com/mozarynscholar/firstrepo.git}
+\\[0.5em]
+Jeśli w repozytorium (tego na GitHubie) są jakieś zmiany, których nie ma na  komputerze, to należy pobrać do siebie lokalnie.
+\\[0.5em]
+\texttt{git pull origin master\\
+remote: Enumerating objects: 3, done.\\
+remote: Counting objects: 100\% (3/3), done.\\
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0\\
+Unpacking objects: 100\% (3/3), 612 bytes | 68.00 KiB/s, done.\\
+From https://github.com/mozarynscholar/firstrepo\\
+ * branch            master     -> FETCH\_HEAD\\
+ * [new branch]      master     -> origin/master}
+%
+\end{frame}
+%
+\begin{frame}[fragile]{Praca z repozytorium na kompie - Git Bash}
+\justify
+%
+\footnotesize
+Dodanie pliku do katalogu roboczego
+\\[0.5em]
+\texttt{\$ cd c:/first\_repo}
+\\[0.5em]
+Inicjujemy pracę z git-em
+\\[0.5em]
+\texttt{\$ git init}
+\\[0.5em]
+\texttt{Initialized empty Git repository in C:/first_repo/.git/}
+\\[0.5em]
+Przechodziny do repozytorium na gitHub (zielony przycisk "clone or download" do skopiowania adresu repozytorium)
+\\[0.5em]
+\texttt{git remote add origin https://github.com/mozarynscholar/firstrepo.git}
+\\[0.5em]
+Jeśli w repozytorium (tego na GitHubie) są jakieś zmiany, których nie ma na  komputerze, to należy pobrać do siebie lokalnie.
+\\[0.5em]
+\texttt{git pull origin master\\
+remote: Enumerating objects: 3, done.\\
+remote: Counting objects: 100\% (3/3), done.\\
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0\\
+Unpacking objects: 100\% (3/3), 612 bytes | 68.00 KiB/s, done.\\
+From https://github.com/mozarynscholar/firstrepo\\
+ * branch            master     -> FETCH\_HEAD\\
+ * [new branch]      master     -> origin/master}
+%
+\end{frame}
+%
+\section{Literatura}
+%
+\begin{frame}{Literatura}
+%
+Chacon, S., and Straub, B. "Pro Git book", Apress, 2014.
+\url{https://git-scm.com/book/en/v2}
+%
+\end{frame}
+%
+\end{document}
